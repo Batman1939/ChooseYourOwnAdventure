@@ -6,33 +6,49 @@ var game = {
     levels: {
 
         start: {
-            message: "You come across a dark cave",
+            message: "You wake in a cold cell",
             choices: [
                 {
-                    text: "Enter the cave",
-                    nextLevel: "cave",
+                    text: "Aggressive",
+                    nextLevel: "guardEncounter1",
                 },
 
                 {
-                    text: "Keep on moving",
-                    nextLevel: "field",
+                    text: "Patient",
+                    nextLevel: "guardEncounter2",
                 },
             ]
         },
 
-        cave: {
+        guardEncounter1: {
             background_image: "fire.gif",
             music: "Final-Fantasy-7-Boss-Battle.mp3",
-            message: "You come across a fire monster or something!",
+            message: "Guards enter the cell, demanding you stand.",
             choices: [
                 {
-                    text: "Start over",
-                    nextLevel: "start",
+                    text: "grab guard weapon",
+                    nextLevel: "agressiveFight",
                 },
             ]
         },
-
-        field: {
+         agressiveFight: {
+            message:"One guard is disabled, only one left.",
+            choices: [
+                {
+                    text:"Tackle the remaining guard.",
+                    nextLevel: "takedown",
+                }
+            ]
+        },
+        takedown: {
+            message: "The guard goes down with a tough fight."
+            choices: [
+                {
+                    
+                }
+            ]
+        }
+        guardEncounter2: {
             message: "Some adventurer you are...",
             choices: [
                 {
@@ -41,6 +57,8 @@ var game = {
                 },
             ]
         },
+        
+       
 
     }
 };
